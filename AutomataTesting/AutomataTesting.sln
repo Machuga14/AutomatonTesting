@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomataTesting.Engine", "AutomataTesting\AutomataTesting.Engine.csproj", "{062B3792-F762-4CFA-87F9-8A2D6D11BCC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{9E59B51C-DCEC-4FD4-A237-C026AE2C80D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{062B3792-F762-4CFA-87F9-8A2D6D11BCC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{062B3792-F762-4CFA-87F9-8A2D6D11BCC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{062B3792-F762-4CFA-87F9-8A2D6D11BCC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{062B3792-F762-4CFA-87F9-8A2D6D11BCC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E59B51C-DCEC-4FD4-A237-C026AE2C80D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E59B51C-DCEC-4FD4-A237-C026AE2C80D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E59B51C-DCEC-4FD4-A237-C026AE2C80D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E59B51C-DCEC-4FD4-A237-C026AE2C80D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09A37385-0FC4-48B0-AB8A-BADACEBE52B1}
+	EndGlobalSection
+EndGlobal
