@@ -58,6 +58,11 @@ namespace AutomataTesting
     /// <returns></returns>
     private static Tuple<State, List<Tuple<string, string>>> ParseStateLine(string s)
     {
+      if (!s.Contains("="))
+      {
+        throw new Exception("Missing a '=' symbol on line '" + s + "'");
+      }
+
       string stateName = s.Trim().Substring(0, s.Trim().IndexOf("="));
       string map = s.Substring(s.IndexOf('{') + 1, s.IndexOf('}') - s.IndexOf('{') - 1);
       string isAcceptingUnparsed = s.Substring(s.IndexOf(",", s.IndexOf('}')) + 1).Trim();

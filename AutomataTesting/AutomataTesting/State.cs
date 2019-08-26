@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace AutomataTesting
 {
+  /// <summary>
+  /// Class representing a <see cref="State"/>, composed of a name, whether the state is accepting, as wel as the map of acceptable strings, and the states
+  /// that they map to.
+  /// </summary>
   public class State
   {
     /// <summary>
@@ -20,6 +24,10 @@ namespace AutomataTesting
     /// </summary>
     public Dictionary<string, State> AcceptableStrings { get; set; } = new Dictionary<string, State>();
 
+    /// <summary>
+    /// Overridden ToString() Method.
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
       return this.StateName;
