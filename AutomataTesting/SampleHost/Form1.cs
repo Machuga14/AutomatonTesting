@@ -16,7 +16,7 @@ namespace SampleHost
   using System.Threading.Tasks;
   using System.Windows.Forms;
 
-  using AutomataTesting;
+  using AutomataTesting.Engine;
 
   /// <summary>
   /// Form class hosting the AutomataTesting.Engine.
@@ -61,6 +61,7 @@ abbb".Trim();
     private void BtnEval_Click(object sender, EventArgs e)
     {
       Automaton a = AutomatonParser.ParseAutomaton(this.rtbxAutomaton.Text);
+      List<ParseStringResults> allResults = new List<ParseStringResults>();
 
       StringBuilder result = new StringBuilder();
 
@@ -68,8 +69,8 @@ abbb".Trim();
       {
         try
         {
-          bool resuly = AutomatonEvaluator.EvalAutomaton(a, s);
-          result.AppendLine(resuly.ToString());
+          ParseStringResults currResults = AutomatonEvaluator.EvalAutomaton(a, s);
+          result.AppendLine(currResults.Validated.ToString());
         }
         catch (Exception ex)
         {

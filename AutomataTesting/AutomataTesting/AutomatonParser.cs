@@ -4,7 +4,7 @@
 // </copyright>
 // -------------------------------------------------------
 
-namespace AutomataTesting
+namespace AutomataTesting.Engine
 {
   using System;
   using System.Collections.Generic;

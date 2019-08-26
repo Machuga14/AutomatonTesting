@@ -44,6 +44,7 @@
       this.rtbxAutomaton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+      this.rtbxAutomaton.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.rtbxAutomaton.Location = new System.Drawing.Point(3, 3);
       this.rtbxAutomaton.Name = "rtbxAutomaton";
       this.rtbxAutomaton.Size = new System.Drawing.Size(510, 430);
@@ -84,6 +85,7 @@
       this.rtbxStringsToEval.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+      this.rtbxStringsToEval.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.rtbxStringsToEval.Location = new System.Drawing.Point(3, 3);
       this.rtbxStringsToEval.Name = "rtbxStringsToEval";
       this.rtbxStringsToEval.Size = new System.Drawing.Size(476, 430);
@@ -108,7 +110,7 @@
       this.ClientSize = new System.Drawing.Size(1011, 467);
       this.Controls.Add(this.spcAutomotaAndString);
       this.Name = "Form1";
-      this.Text = "Form1";
+      this.Text = "Automaton Testing";
       this.spcAutomotaAndString.Panel1.ResumeLayout(false);
       this.spcAutomotaAndString.Panel2.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.spcAutomotaAndString)).EndInit();
