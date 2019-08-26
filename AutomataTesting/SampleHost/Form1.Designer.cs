@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace SampleHost
 {
   partial class Form1
   {
@@ -59,7 +59,7 @@
       this.btnParse.TabIndex = 1;
       this.btnParse.Text = "Parse";
       this.btnParse.UseVisualStyleBackColor = true;
-      this.btnParse.Click += new System.EventHandler(this.btnParse_Click);
+      this.btnParse.Click += new System.EventHandler(this.BtnParse_Click);
       // 
       // spcAutomotaAndString
       // 
@@ -99,7 +99,7 @@
       this.btnEval.TabIndex = 3;
       this.btnEval.Text = "Eval";
       this.btnEval.UseVisualStyleBackColor = true;
-      this.btnEval.Click += new System.EventHandler(this.btnEval_Click);
+      this.btnEval.Click += new System.EventHandler(this.BtnEval_Click);
       // 
       // Form1
       // 

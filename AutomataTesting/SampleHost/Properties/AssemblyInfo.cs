@@ -1,4 +1,10 @@
-﻿using System.Reflection;
+﻿// ---------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="Matthew K. Crandall - N/A">
+// Copyright (c) Matthew K. Crandall. All rights reserved.
+// </copyright>
+// ---------------------------------------------------------------------
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

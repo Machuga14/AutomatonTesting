@@ -1,11 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// -------------------------------------------------------
+// <copyright file="AutomatonEvaluator.cs" company="Matthew K. Crandall - N/A">
+// Copyright (c) Matthew K. Crandall. All rights reserved.
+// </copyright>
+// -------------------------------------------------------
 
 namespace AutomataTesting
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Text;
+
+  /// <summary>
+  /// <see langword="static"/> <see cref="class"/> to evaluate a <see cref="string"/> with a provided <see cref="Automaton"/> representing a logical Regular Grammar,
+  /// in order to determine if the specified string is legal.
+  /// </summary>
   public static class AutomatonEvaluator
   {
+    /// <summary>
+    /// Method to evaluate a string against a specified <see cref="Automaton"/> to determine legality.
+    /// </summary>
+    /// <param name="aut">The <see cref="Automaton"/> to evaluate.</param>
+    /// <param name="data">The string to evaluate efficacy of.</param>
+    /// <returns><see langword="true"/> if the string is legal, else, <see langword="false"/>.</returns>
     public static bool EvalAutomaton(Automaton aut, string data)
     {
       State currState = null;

@@ -1,8 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// ---------------------------------------------------------------------
+// <copyright file="State.cs" company="Matthew K. Crandall - N/A">
+// Copyright (c) Matthew K. Crandall. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------
 
 namespace AutomataTesting
 {
+  using System;
+  using System.Collections.Generic;
+
   /// <summary>
   /// Class representing a <see cref="State"/>, composed of a name, whether the state is accepting, as wel as the map of acceptable strings, and the states
   /// that they map to.
@@ -27,7 +33,7 @@ namespace AutomataTesting
     /// <summary>
     /// Overridden ToString() Method.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>A string representation of this <see cref="State"/> object.</returns>
     public override string ToString()
     {
       return this.StateName;

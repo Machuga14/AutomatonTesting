@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿// -------------------------------------------------------
+// <copyright file="AutomatonParser.cs" company="Matthew K. Crandall - N/A">
+// Copyright (c) Matthew K. Crandall. All rights reserved.
+// </copyright>
+// -------------------------------------------------------
 
 namespace AutomataTesting
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Text;
+
+  /// <summary>
+  /// Static Class capable of parsing <see cref="Automaton"/> objects.
+  /// </summary>
   public static class AutomatonParser
   {
+    /// <summary>
+    /// Parses an <see cref="Automaton"/> based upon the description defined within the provided string.
+    /// </summary>
+    /// <param name="s">The string defining the <see cref="Automaton"/> to construct.</param>
+    /// <returns>An <see cref="Automaton"/> representing the string defined.</returns>
     public static Automaton ParseAutomaton(string s)
     {
       string[] splitLines = s.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
@@ -40,7 +54,7 @@ namespace AutomataTesting
       {
         StateLookup = statesBeingParsed.ToDictionary(
         t => t.StateName,
-        t => t)
+        t => t),
       };
 
       return parsed;
@@ -51,11 +65,11 @@ namespace AutomataTesting
     /// E={a|O,b|O},true
     /// Indicating that two strings are legal in state E:
     /// a, which maps to O, and b, which maps to O, as well as e being an accepting state.
-    /// 
+    ///
     /// Doesn't fully populate the State Object, and instead, returns a partially populated state object, with a list(tuple(string, statename) indicating the mapping states.
     /// </summary>
     /// <param name="s">the string to parse.</param>
-    /// <returns></returns>
+    /// <returns>A Tuple representing a <see cref="State"/>, and list of tuple(string,string) describing the legal characters and state transformations of the <see cref="State"/>, for secondary parsing.</returns>
     private static Tuple<State, List<Tuple<string, string>>> ParseStateLine(string s)
     {
       if (!s.Contains("="))
@@ -70,7 +84,7 @@ namespace AutomataTesting
       State retState = new State
       {
         StateName = stateName,
-        IsAccepting = bool.Parse(isAcceptingUnparsed)
+        IsAccepting = bool.Parse(isAcceptingUnparsed),
       };
 
       List<Tuple<string, string>> mapDef = new List<Tuple<string, string>>();
