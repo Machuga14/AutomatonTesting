@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AutomataTesting.Engine</name>
+    </assembly>
+    <members>
+        <member name="T:AutomataTesting.Engine.Automaton">
+            <summary>
+            <see cref="T:AutomataTesting.Engine.Automaton"/> class representing a state lookup for <see cref="T:AutomataTesting.Engine.State"/> objects, for traversal of a grammar.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.Automaton.StateLookup">
+            <summary>
+            Gets or sets the state lookup for this <see cref="T:AutomataTesting.Engine.Automaton"/> object.
+            </summary>
+        </member>
+        <member name="T:AutomataTesting.Engine.AutomatonEvaluator">
+            <summary>
+            <see langword="static"/> class to evaluate a <see cref="T:System.String"/> with a provided <see cref="T:AutomataTesting.Engine.Automaton"/> representing a logical Regular Grammar,
+            in order to determine if the specified string is legal.
+            </summary>
+        </member>
+        <member name="M:AutomataTesting.Engine.AutomatonEvaluator.EvalAutomaton(AutomataTesting.Engine.Automaton,System.String)">
+            <summary>
+            Method to evaluate a string against a specified <see cref="T:AutomataTesting.Engine.Automaton"/> to determine legality.
+            </summary>
+            <param name="aut">The <see cref="T:AutomataTesting.Engine.Automaton"/> to evaluate.</param>
+            <param name="data">The string to evaluate efficacy of.</param>
+            <returns><see langword="true"/> if the string is legal, else, <see langword="false"/>.</returns>
+        </member>
+        <member name="T:AutomataTesting.Engine.AutomatonParser">
+            <summary>
+            Static Class capable of parsing <see cref="T:AutomataTesting.Engine.Automaton"/> objects.
+            </summary>
+        </member>
+        <member name="M:AutomataTesting.Engine.AutomatonParser.ParseAutomaton(System.String)">
+            <summary>
+            Parses an <see cref="T:AutomataTesting.Engine.Automaton"/> based upon the description defined within the provided string.
+            </summary>
+            <param name="s">The string defining the <see cref="T:AutomataTesting.Engine.Automaton"/> to construct.</param>
+            <returns>An <see cref="T:AutomataTesting.Engine.Automaton"/> representing the string defined.</returns>
+        </member>
+        <member name="M:AutomataTesting.Engine.AutomatonParser.ParseStateLine(System.String)">
+             <summary>
+             Expects a string similar to:
+             E={a|O,b|O},true
+             Indicating that two strings are legal in state E:
+             a, which maps to O, and b, which maps to O, as well as e being an accepting state.
+            
+             Doesn't fully populate the State Object, and instead, returns a partially populated state object, with a list(tuple(string, statename) indicating the mapping states.
+             </summary>
+             <param name="s">the string to parse.</param>
+             <returns>A Tuple representing a <see cref="T:AutomataTesting.Engine.State"/>, and list of tuple(string,string) describing the legal characters and state transformations of the <see cref="T:AutomataTesting.Engine.State"/>, for secondary parsing.</returns>
+        </member>
+        <member name="T:AutomataTesting.Engine.ParseStringResults">
+            <summary>
+            Class storing the results of parsing a string with a defined <see cref="T:AutomataTesting.Engine.Automaton"/>.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.ParseStringResults.Input">
+            <summary>
+            Gets or sets the input string for the parsing via an <see cref="T:AutomataTesting.Engine.Automaton"/>.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.ParseStringResults.CorrespondingAutomaton">
+            <summary>
+            Gets or sets the corresponding <see cref="T:AutomataTesting.Engine.Automaton"/> that was used to validate the <see cref="P:AutomataTesting.Engine.ParseStringResults.Input"/>.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.ParseStringResults.EvalStatements">
+            <summary>
+            Gets or sets the collection of evaluation statements (or steps) used to determine whether this <see cref="T:AutomataTesting.Engine.ParseStringResults"/> represents a success or failure.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.ParseStringResults.Validated">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:AutomataTesting.Engine.ParseStringResults"/> represents a validated string.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.ParseStringResults.ErrorMessage">
+            <summary>
+            Gets or sets an error message associated with this <see cref="T:AutomataTesting.Engine.ParseStringResults"/>. Should be <see cref="F:System.String.Empty"/> if no error occurred.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.ParseStringResults.HadError">
+            <summary>
+            Gets a value indicating whether an error occurred when constructing this <see cref="T:AutomataTesting.Engine.ParseStringResults"/> and validating it against an <see cref="T:AutomataTesting.Engine.Automaton"/>.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.ParseStringResults.IllegalCharIndex">
+            <summary>
+            Gets or sets the index within the string that had the error.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.ParseStringResults.IllegalChar">
+            <summary>
+            Gets the offending character that invalidated the <see cref="P:AutomataTesting.Engine.ParseStringResults.Input"/> <see cref="T:System.String"/>.
+            returns \0 (null-terminating character) if the index is out of range of the current <see cref="P:AutomataTesting.Engine.ParseStringResults.Input"/> length.
+            </summary>
+        </member>
+        <member name="T:AutomataTesting.Engine.State">
+            <summary>
+            Class representing a <see cref="T:AutomataTesting.Engine.State"/>, composed of a name, whether the state is accepting, as wel as the map of acceptable strings, and the states
+            that they map to.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.State.StateName">
+            <summary>
+            Gets or sets the name of this state.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.State.IsAccepting">
+            <summary>
+            Gets or sets a value indicating whether this is an accepting (or ending) state.
+            </summary>
+        </member>
+        <member name="P:AutomataTesting.Engine.State.AcceptableStrings">
+            <summary>
+            Gets or sets the collection of acceptable strings by this state, as well as the state the string maps to.
+            </summary>
+        </member>
+        <member name="M:AutomataTesting.Engine.State.ToString">
+            <summary>
+            Overridden ToString() Method.
+            </summary>
+            <returns>A string representation of this <see cref="T:AutomataTesting.Engine.State"/> object.</returns>
+        </member>
+    </members>
+</doc>

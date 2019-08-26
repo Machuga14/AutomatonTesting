@@ -63,22 +63,23 @@ abbb".Trim();
       Automaton a = AutomatonParser.ParseAutomaton(this.rtbxAutomaton.Text);
       List<ParseStringResults> allResults = new List<ParseStringResults>();
 
-      StringBuilder result = new StringBuilder();
-
       foreach (string s in this.rtbxStringsToEval.Lines)
       {
         try
         {
           ParseStringResults currResults = AutomatonEvaluator.EvalAutomaton(a, s);
-          result.AppendLine(currResults.Validated.ToString());
+          allResults.Add(currResults);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-          result.AppendLine(ex.ToString());
+          // MATTHEWC: TODO: Maybe report errors separately?
+          // Maybe dummy up a ParseStringResults with error data?
         }
       }
 
-      MessageBox.Show(result.ToString());
+      CtlVParseStringResultsLVAndDetail disp = new CtlVParseStringResultsLVAndDetail();
+      disp.ParseStringResultsOnControls = allResults;
+      MyGUIUtilities.DisplayUserControlInForm(disp, "Evaluated Strings via Automata", true);
     }
   }
 }

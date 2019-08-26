@@ -49,14 +49,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CtlVParseStringResults.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlVParseStringResults.Designer.cs">
+      <DependentUpon>CtlVParseStringResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlVParseStringResultsInLV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlVParseStringResultsInLV.Designer.cs">
+      <DependentUpon>CtlVParseStringResultsInLV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CtlVParseStringResultsLVAndDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CtlVParseStringResultsLVAndDetail.Designer.cs">
+      <DependentUpon>CtlVParseStringResultsLVAndDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyGUIUtilities.cs" />
+    <Compile Include="ParseStringResultsDelegate.cs" />
+    <Compile Include="ParseStringResultsEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CtlVParseStringResults.resx">
+      <DependentUpon>CtlVParseStringResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlVParseStringResultsInLV.resx">
+      <DependentUpon>CtlVParseStringResultsInLV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtlVParseStringResultsLVAndDetail.resx">
+      <DependentUpon>CtlVParseStringResultsLVAndDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
