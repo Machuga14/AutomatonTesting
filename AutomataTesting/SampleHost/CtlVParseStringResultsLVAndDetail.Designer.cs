@@ -28,9 +28,20 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.ctlVParseStringResultsInLV1 = new SampleHost.CtlVParseStringResultsInLV();
       this.ctlVParseStringResults1 = new SampleHost.CtlVParseStringResults();
+      this.ctlVParseStringResultsInLV1 = new SampleHost.CtlVParseStringResultsInLV();
       this.SuspendLayout();
+      // 
+      // ctlVParseStringResults1
+      // 
+      this.ctlVParseStringResults1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+      this.ctlVParseStringResults1.Location = new System.Drawing.Point(303, 0);
+      this.ctlVParseStringResults1.Name = "ctlVParseStringResults1";
+      this.ctlVParseStringResults1.ResultsOnScreen = null;
+      this.ctlVParseStringResults1.Size = new System.Drawing.Size(520, 437);
+      this.ctlVParseStringResults1.TabIndex = 1;
       // 
       // ctlVParseStringResultsInLV1
       // 
@@ -39,20 +50,9 @@
       this.ctlVParseStringResultsInLV1.Location = new System.Drawing.Point(0, 0);
       this.ctlVParseStringResultsInLV1.Name = "ctlVParseStringResultsInLV1";
       this.ctlVParseStringResultsInLV1.ResultsInLV = null;
-      this.ctlVParseStringResultsInLV1.Size = new System.Drawing.Size(201, 437);
+      this.ctlVParseStringResultsInLV1.Size = new System.Drawing.Size(297, 437);
       this.ctlVParseStringResultsInLV1.TabIndex = 0;
       this.ctlVParseStringResultsInLV1.ParseStringResultsSelectedHandler += new SampleHost.ParseStringResultsDelegate(this.CtlVParseStringResultsInLV1_ParseStringResultsSelectedHandler);
-      // 
-      // ctlVParseStringResults1
-      // 
-      this.ctlVParseStringResults1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-      this.ctlVParseStringResults1.Location = new System.Drawing.Point(207, 0);
-      this.ctlVParseStringResults1.Name = "ctlVParseStringResults1";
-      this.ctlVParseStringResults1.ResultsOnScreen = null;
-      this.ctlVParseStringResults1.Size = new System.Drawing.Size(616, 437);
-      this.ctlVParseStringResults1.TabIndex = 1;
       // 
       // CtlVParseStringResultsLVAndDetail
       // 

@@ -90,6 +90,7 @@
       // 
       // cbxValidated
       // 
+      this.cbxValidated.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.cbxValidated.AutoSize = true;
       this.cbxValidated.Enabled = false;
       this.cbxValidated.Location = new System.Drawing.Point(391, 15);
@@ -101,6 +102,7 @@
       // 
       // cbxError
       // 
+      this.cbxError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.cbxError.AutoSize = true;
       this.cbxError.Enabled = false;
       this.cbxError.Location = new System.Drawing.Point(473, 15);
@@ -112,6 +114,7 @@
       // 
       // lblOffendingCharacter
       // 
+      this.lblOffendingCharacter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.lblOffendingCharacter.AutoSize = true;
       this.lblOffendingCharacter.Location = new System.Drawing.Point(533, 15);
       this.lblOffendingCharacter.Name = "lblOffendingCharacter";
@@ -121,6 +124,7 @@
       // 
       // tbxOffendingCharacter
       // 
+      this.tbxOffendingCharacter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.tbxOffendingCharacter.Location = new System.Drawing.Point(644, 13);
       this.tbxOffendingCharacter.Name = "tbxOffendingCharacter";
       this.tbxOffendingCharacter.ReadOnly = true;
@@ -129,6 +133,7 @@
       // 
       // tbxOffendingIndex
       // 
+      this.tbxOffendingIndex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.tbxOffendingIndex.Location = new System.Drawing.Point(770, 14);
       this.tbxOffendingIndex.Name = "tbxOffendingIndex";
       this.tbxOffendingIndex.ReadOnly = true;
@@ -137,6 +142,7 @@
       // 
       // lblOffendingIndex
       // 
+      this.lblOffendingIndex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.lblOffendingIndex.AutoSize = true;
       this.lblOffendingIndex.Location = new System.Drawing.Point(685, 16);
       this.lblOffendingIndex.Name = "lblOffendingIndex";

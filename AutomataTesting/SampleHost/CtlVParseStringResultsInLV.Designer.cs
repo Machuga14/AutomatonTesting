@@ -30,12 +30,21 @@
     {
       this.lvParseStringResults = new System.Windows.Forms.ListView();
       this.columnHeaderInputString = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeaderValidated = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeaderError = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.columnHeaderOffendingCharacter = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.SuspendLayout();
       // 
       // lvParseStringResults
       // 
+      this.lvParseStringResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.lvParseStringResults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderInputString});
+            this.columnHeaderInputString,
+            this.columnHeaderValidated,
+            this.columnHeaderError,
+            this.columnHeaderOffendingCharacter});
       this.lvParseStringResults.FullRowSelect = true;
       this.lvParseStringResults.GridLines = true;
       this.lvParseStringResults.HideSelection = false;
@@ -53,6 +62,19 @@
       this.columnHeaderInputString.Text = "Input String";
       this.columnHeaderInputString.Width = 120;
       // 
+      // columnHeaderValidated
+      // 
+      this.columnHeaderValidated.Text = "Validated";
+      // 
+      // columnHeaderError
+      // 
+      this.columnHeaderError.Text = "Err?";
+      this.columnHeaderError.Width = 40;
+      // 
+      // columnHeaderOffendingCharacter
+      // 
+      this.columnHeaderOffendingCharacter.Text = "Char";
+      // 
       // CtlVParseStringResultsInLV
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -68,5 +90,8 @@
 
     private System.Windows.Forms.ListView lvParseStringResults;
     private System.Windows.Forms.ColumnHeader columnHeaderInputString;
+    private System.Windows.Forms.ColumnHeader columnHeaderValidated;
+    private System.Windows.Forms.ColumnHeader columnHeaderError;
+    private System.Windows.Forms.ColumnHeader columnHeaderOffendingCharacter;
   }
 }

@@ -31,6 +31,7 @@ namespace AutomataTesting.Engine
       };
 
       State currState = null;
+      int digitsForLengthOfChars = CalculateDigits(data.Length);
 
       if (aut.StateLookup.ContainsKey("E"))
       {
@@ -65,7 +66,7 @@ namespace AutomataTesting.Engine
           State nextState = currState.AcceptableStrings[c.ToString()];
           retVal.EvalStatements.Add(string.Format(
             "[{0}]: {1}[{2}] -> {3}",
-            idx,
+            idx.ToString().PadLeft(digitsForLengthOfChars, '0'),
             currState.StateName,
             c,
             nextState.StateName));
@@ -97,6 +98,25 @@ namespace AutomataTesting.Engine
       }
 
       return retVal;
+    }
+
+    /// <summary>
+    /// Messy helper-method to calculate the number of digits a value has.
+    /// (written because I was too lazy to figure out a smarter method).
+    /// </summary>
+    /// <param name="n">The value to calculate # of digits of.</param>
+    /// <returns>the number of digits the provided value has.</returns>
+    private static int CalculateDigits(int n)
+    {
+      int digits = 1;
+
+      while (n > 0)
+      {
+        digits++;
+        n /= 10;
+      }
+
+      return digits - 1;
     }
   }
 }

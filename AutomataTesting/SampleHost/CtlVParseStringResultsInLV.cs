@@ -68,8 +68,11 @@ namespace SampleHost
     /// <param name="l">The <see cref="ListViewItem"/> to render the corresponding <see cref="ParseStringResults"/> on.</param>
     private void MapParseStringResultsToLV(ParseStringResults p, ListViewItem l)
     {
-      l.EnsureListViewItemHasNItems(1);
+      l.EnsureListViewItemHasNItems(4);
       l.SubItems[0].Text = p.Input;
+      l.SubItems[1].Text = p.Validated ? "T" : "F";
+      l.SubItems[2].Text = p.HadError ? "T" : "F";
+      l.SubItems[3].Text = p.IllegalChar.ToString();
     }
 
     /// <summary>
