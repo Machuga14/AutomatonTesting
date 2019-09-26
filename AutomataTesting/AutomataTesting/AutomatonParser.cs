@@ -81,7 +81,7 @@ namespace AutomataTesting.Engine
 
       DFA parsed = new DFA()
       {
-        StateLookup = statesBeingParsed.ToDictionary(
+        DeterministicStateLookup = statesBeingParsed.ToDictionary(
         t => t.StateName,
         t => t),
       };

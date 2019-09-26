@@ -40,13 +40,20 @@ namespace AutomataTesting.Engine
         return false;
       }
 
-      foreach (var keyPair in left.StateLookup)
+      if (left.AutomatonType == AutomatonType.DFA)
       {
-        if (!right.StateLookup.ContainsKey(keyPair.Key) ||
-          !keyPair.Value.ValueEquals(right.StateLookup[keyPair.Key]))
+        foreach (var keyPair in left.StateLookup)
         {
-          return false;
+          if (!right.StateLookup.ContainsKey(keyPair.Key) ||
+            !(keyPair.Value as DeterministicState).ValueEquals(right.StateLookup[keyPair.Key] as DeterministicState))
+          {
+            return false;
+          }
         }
+      }
+      else
+      {
+        throw new Exception("No support for comparing non-DFA states.");
       }
 
       return true;

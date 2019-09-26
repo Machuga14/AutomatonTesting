@@ -19,12 +19,12 @@ namespace AutomataTesting.Engine
     /// <summary>
     /// Gets or sets the state lookup for this <see cref="Automaton"/> object.
     /// </summary>
-    public virtual Dictionary<string, DeterministicState> StateLookup { get; set; } = new Dictionary<string, DeterministicState>();
+    public abstract Dictionary<string, State> StateLookup { get; set; }
 
     /// <summary>
     /// Gets the <see cref="AutomatonType"/> describing what type of <see cref="Automaton"/> this is.
     /// (without reflection / is).
     /// </summary>
-    public virtual AutomatonType AutomatonType { get; }
+    public abstract AutomatonType AutomatonType { get; }
   }
 }

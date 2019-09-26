@@ -93,9 +93,9 @@ O={a|E,b|E},false".Trim()); // There is a space after the end of true on the fir
     /// Generates the expected <see cref="Automaton"/> to be parsed by the various test methods in this unit testing class.
     /// </summary>
     /// <returns>An <see cref="Automaton"/> representing the expected value.</returns>
-    private Automaton GenerateExpectedAutomaton1()
+    private DFA GenerateExpectedAutomaton1()
     {
-      Automaton a = new DFA();
+      DFA a = new DFA();
       DeterministicState e = new DeterministicState();
       e.StateName = "E";
       e.IsAccepting = true;
@@ -110,8 +110,8 @@ O={a|E,b|E},false".Trim()); // There is a space after the end of true on the fir
       o.AcceptableStrings.Add("a", e);
       o.AcceptableStrings.Add("b", e);
 
-      a.StateLookup.Add(e.StateName, e);
-      a.StateLookup.Add(o.StateName, o);
+      a.DeterministicStateLookup.Add(e.StateName, e);
+      a.DeterministicStateLookup.Add(o.StateName, o);
 
       return a;
     }

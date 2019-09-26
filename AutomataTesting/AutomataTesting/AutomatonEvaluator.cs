@@ -24,34 +24,45 @@ namespace AutomataTesting.Engine
     /// <returns><see langword="true"/> if the string is legal, else, <see langword="false"/>.</returns>
     public static ParseStringResults EvalAutomaton(Automaton aut, string data)
     {
+      switch (aut.AutomatonType)
+      {
+        case AutomatonType.DFA:
+          return EvalAutomaton(aut as DFA, data);
+      }
+
+      throw new Exception("Unexpected behavior - did an invalid Automaton type get provided?");
+    }
+
+    private static ParseStringResults EvalDFA(DFA dfa, string data)
+    {
       ParseStringResults retVal = new ParseStringResults
       {
         Input = data,
-        CorrespondingAutomaton = aut,
+        CorrespondingAutomaton = dfa,
       };
 
       DeterministicState currState = null;
       int digitsForLengthOfChars = CalculateDigits(data.Length);
 
-      if (aut.StateLookup.ContainsKey("E"))
+      if (dfa.StateLookup.ContainsKey("E"))
       {
-        currState = aut.StateLookup["E"]; // always start with E.
+        currState = dfa.DeterministicStateLookup["E"]; // always start with E.
       }
-      else if (aut.StateLookup.ContainsKey("q_0"))
+      else if (dfa.StateLookup.ContainsKey("q_0"))
       {
-        currState = aut.StateLookup["q_0"]; // else, start with q_0.
+        currState = dfa.DeterministicStateLookup["q_0"]; // else, start with q_0.
       }
-      else if (aut.StateLookup.ContainsKey("Q_0"))
+      else if (dfa.StateLookup.ContainsKey("Q_0"))
       {
-        currState = aut.StateLookup["Q_0"]; // else, start with Q_0.
+        currState = dfa.DeterministicStateLookup["Q_0"]; // else, start with Q_0.
       }
-      else if (aut.StateLookup.ContainsKey("q0"))
+      else if (dfa.StateLookup.ContainsKey("q0"))
       {
-        currState = aut.StateLookup["q0"]; // else, start with q0.
+        currState = dfa.DeterministicStateLookup["q0"]; // else, start with q0.
       }
-      else if (aut.StateLookup.ContainsKey("Q0"))
+      else if (dfa.StateLookup.ContainsKey("Q0"))
       {
-        currState = aut.StateLookup["Q0"]; // else, start with Q0.
+        currState = dfa.DeterministicStateLookup["Q0"]; // else, start with Q0.
       }
       else
       {
