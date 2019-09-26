@@ -30,7 +30,7 @@ namespace AutomataTesting.Engine
         CorrespondingAutomaton = aut,
       };
 
-      State currState = null;
+      DeterministicState currState = null;
       int digitsForLengthOfChars = CalculateDigits(data.Length);
 
       if (aut.StateLookup.ContainsKey("E"))
@@ -63,7 +63,7 @@ namespace AutomataTesting.Engine
       {
         if (currState.AcceptableStrings.ContainsKey(c.ToString()))
         {
-          State nextState = currState.AcceptableStrings[c.ToString()];
+          DeterministicState nextState = currState.AcceptableStrings[c.ToString()];
           retVal.EvalStatements.Add(string.Format(
             "[{0}]: {1}[{2}] -> {3}",
             idx.ToString().PadLeft(digitsForLengthOfChars, '0'),

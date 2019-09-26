@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------
-// <copyright file="State.cs" company="Matthew K. Crandall - N/A">
+// <copyright file="DeterministicState.cs" company="Matthew K. Crandall - N/A">
 // Copyright (c) Matthew K. Crandall. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------
@@ -10,10 +10,10 @@ namespace AutomataTesting.Engine
   using System.Collections.Generic;
 
   /// <summary>
-  /// Class representing a <see cref="State"/>, composed of a name, whether the state is accepting, as wel as the map of acceptable strings, and the states
+  /// Class representing a <see cref="DeterministicState"/>, composed of a name, whether the state is accepting, as wel as the map of acceptable strings, and the states
   /// that they map to.
   /// </summary>
-  public class State
+  public class DeterministicState
   {
     /// <summary>
     /// Gets or sets the name of this state.
@@ -28,12 +28,12 @@ namespace AutomataTesting.Engine
     /// <summary>
     /// Gets or sets the collection of acceptable strings by this state, as well as the state the string maps to.
     /// </summary>
-    public Dictionary<string, State> AcceptableStrings { get; set; } = new Dictionary<string, State>();
+    public Dictionary<string, DeterministicState> AcceptableStrings { get; set; } = new Dictionary<string, DeterministicState>();
 
     /// <summary>
     /// Overridden ToString() Method.
     /// </summary>
-    /// <returns>A string representation of this <see cref="State"/> object.</returns>
+    /// <returns>A string representation of this <see cref="DeterministicState"/> object.</returns>
     public override string ToString()
     {
       return this.StateName;
